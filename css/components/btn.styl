@@ -6,10 +6,6 @@ a {
 	color: var(--color_theme);
 } 
 
-.disabled {
-	pointer-events: none;
-	background: red;
-}
 
 .btn {
 	color: var(--color_theme);
@@ -17,7 +13,19 @@ a {
 	position: relative;
 	border: 0;
 	&-theme {
-		background: var(--color_p);
+		background: var(--color_theme);
+		color: #fff;
+		padding: 10px;
+	}
+
+	&-light {
+		background: var(--color_light);
+		color: #fff;
+		padding: 10px;
+	}
+
+	&-dark {
+		background: var(--color_dark);
 		color: #fff;
 		padding: 10px;
 	}

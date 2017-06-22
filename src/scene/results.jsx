@@ -14,8 +14,11 @@ export default class Results extends Component {
                     <Card data={e} />
                 </div>)
             )
-        } else {
-             return () => <p>oi</p>
+        };
+        if(!_.isEmpty(itens)) {
+            return (
+                <Card data={itens} />
+            )
         }
     }
 
@@ -24,9 +27,13 @@ export default class Results extends Component {
         return (
             <section className="space-default results-section">
                 <div className="container">
-                    <div className="grid">
-                        {this.renderMovies(item)}
-                    </div>
+                    {item.error ? 
+                        <p style={{color: '#fff', textAlign: 'center'}}>Nenhum filme encontrado :(</p> : 
+                        <div className="grid">
+                            {this.renderMovies(item)}
+                        </div>
+                    }
+
                 </div>
             </section>
         )

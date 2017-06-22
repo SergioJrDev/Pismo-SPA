@@ -13,20 +13,17 @@ class Search extends Component {
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleDirectorChange = this.handleDirectorChange.bind(this);
         this.handleActorChange = this.handleActorChange.bind(this);
-
-         this.clearValues = this.clearValues.bind(this);
+        this.clearValues = this.clearValues.bind(this);
         
     }
 
     clearValues() {
-        this.setState({...this.state, title: ''})
-        this.setState({...this.state, director: ''})
-        this.setState({...this.state, actor: ''})
+        this.setState({...this.state, title: '', director: '',  actor: ''})
+        SearchAPI(null, this.props.up);
     }
 
     handleSubmit(e) {
         SearchAPI(this.state, this.props.up);
-        this.clearValues();
         e.preventDefault();
     }
 
@@ -78,7 +75,8 @@ class Search extends Component {
                                 className="input" 
                                 type="text"/>
                         </div>
-                        <button className="btn btn-theme btn-uppercase" type="submit">Pesquisar</button>
+                        <button className="btn btn-dark btn-uppercase" type="submit">Pesquisar</button>
+                        <button onClick={this.clearValues} className="btn float-right btn-light btn-uppercase" type="reset">Nova Pesquisa</button>
                     </form>
                 </div>
             </section>

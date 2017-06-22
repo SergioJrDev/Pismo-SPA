@@ -2,6 +2,11 @@ import Axios from 'axios';
 
 
 export function SearchAPI(term, dispatch) {
+    if(term === null) {
+        dispatch({});
+        return;
+    }
+    
     let { title, director, actor } = term;
     var url = 'http://netflixroulette.net/api/api.php'
 
@@ -15,6 +20,6 @@ export function SearchAPI(term, dispatch) {
         url = url+'?actor='+actor;
     }
 
-    Axios.get(url).then(res => dispatch(res.data)).catch(error => console.log('error', error));
+    Axios.get(url).then(res => dispatch(res.data)).catch(error => dispatch({error: error.response.data.message}));
     
 }
