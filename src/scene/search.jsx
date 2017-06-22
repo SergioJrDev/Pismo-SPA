@@ -35,29 +35,31 @@ class Search extends Component {
 
     render() {
         return (
-        <div className="container">
-            <form onSubmit={this.handleSubmit}>
-                <div className="input-group">
-                    <label className="label" htmlFor="title">Título do filme</label>
-                    <input
-                        onChange={this.handleTitleChange} 
-                        value={this.state.title} 
-                        id="title" 
-                        name="title" 
-                        className="input" 
-                        type="text"/>
+            <section className="space-default search-section">
+                <div className="container">
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="input-group">
+                            <label className="label" htmlFor="title">Título do filme</label>
+                            <input
+                                onChange={this.handleTitleChange} 
+                                value={this.state.title} 
+                                id="title" 
+                                name="title" 
+                                className="input" 
+                                type="text"/>
+                        </div>
+                        <div className="input-group">
+                            <label className="label" htmlFor="director">Director</label>
+                            <input onChange={this.handleDirectorChange} value={this.state.director} id="director" name="director" className="input" type="text"/>
+                        </div>
+                        <div className="input-group">
+                            <label className="label" htmlFor="actor">Ator</label>
+                            <input onChange={this.handleActorChange} value={this.state.actor} id="actor" name="actor" className="input" type="text"/>
+                        </div>
+                        <button className="btn btn-theme btn-uppercase" type="submit">Pesquisar</button>
+                    </form>
                 </div>
-                <div className="input-group">
-                    <label className="label" htmlFor="director">Director</label>
-                    <input onChange={this.handleDirectorChange} value={this.state.director} id="director" name="director" className="input" type="text"/>
-                </div>
-                <div className="input-group">
-                    <label className="label" htmlFor="actor">Ator</label>
-                    <input onChange={this.handleActorChange} value={this.state.actor} id="actor" name="actor" className="input" type="text"/>
-                </div>
-                <button type="submit">Pesquisar</button>
-            </form>
-        </div>
+            </section>
         )
     }
 }

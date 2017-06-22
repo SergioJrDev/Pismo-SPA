@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Search from './search'
 import Favorite from './favorite'
 import Results from './results'
+import Header from './header'
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
 
         this.updateResults = this.updateResults.bind(this);
         this. updateFavorite = this. updateFavorite.bind(this);
+
     }
 
     updateResults(e) {
@@ -27,6 +29,7 @@ class App extends Component {
     render() {   
         return (
             <div>
+                <Header />
                 <Favorite favorite={this.state.favorite} />
                 <Search up={this.updateResults} />
                 <Results addFavorite={this.updateFavorite} data={this.state.result} />

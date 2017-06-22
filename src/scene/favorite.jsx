@@ -11,9 +11,9 @@ export default class Favorites extends Component {
 
     render() {
         return (
-            <p>
-             {console.log('Fav', this.props.favorite.length)}
-            </p>
+            <div>
+             {/*{console.log('Fav', this.props.favorite.length)}*/}
+            </div>
         )
     }
 }

@@ -1,0 +1,45 @@
+a, button {
+	cursor: pointer;
+}
+
+a {
+	color: var(--color_theme);
+} 
+
+.disabled {
+	pointer-events: none;
+	background: red;
+}
+
+.btn {
+	color: var(--color_theme);
+	display: inline-block;
+	position: relative;
+	border: 0;
+	&-theme {
+		background: var(--color_p);
+		color: #fff;
+		padding: 10px;
+	}
+	&-icon {
+		background: #e50914;
+		border-radius: 50%;
+		width: 45px;
+		height: 45px;
+		text-align: center;
+	}
+
+	&-block {
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
+
+	&-uppercase {
+		text-transform: uppercase;
+	}
+	&-small {
+		padding: 5px;
+		font-size: 14px;
+	}
+}
