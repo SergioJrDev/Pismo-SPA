@@ -27,7 +27,7 @@ class App extends Component {
     render() {   
         return (
             <div>
-                <Favorite />
+                <Favorite favorite={this.state.favorite} />
                 <Search up={this.updateResults} />
                 <Results addFavorite={this.updateFavorite} data={this.state.result} />
             </div>

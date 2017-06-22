@@ -5,9 +5,15 @@ export default class Favorites extends Component {
         super(props)
     }
 
+    renderFavorites() {
+       
+    }
+
     render() {
         return (
-            <p>Favoritos:</p>
+            <p>
+             {console.log('Fav', this.props.favorite.length)}
+            </p>
         )
     }
 }

@@ -4,7 +4,6 @@ import _ from 'lodash'
 export default class Results extends Component {
     constructor(props) {
         super(props)
-        console.log(props);
     }
 
     renderMovies(itens) {
@@ -22,7 +21,6 @@ export default class Results extends Component {
             return (
                 <div className="container">
                     {this.renderMovies(item)}
-
                 </div>
             )
         } else {
