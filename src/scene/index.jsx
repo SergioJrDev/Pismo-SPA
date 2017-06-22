@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Search from './search'
+import Favorite from './favorite'
 import Results from './results'
 
 
@@ -26,8 +27,9 @@ class App extends Component {
     render() {   
         return (
             <div>
+                <Favorite />
                 <Search up={this.updateResults} />
-                <Results addFavorite={this.updateFavorite} data={this.state} />
+                <Results addFavorite={this.updateFavorite} data={this.state.result} />
             </div>
         )
     }
