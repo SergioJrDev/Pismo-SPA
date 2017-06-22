@@ -6,22 +6,32 @@
     background: var(--color_p)
 }
 
+footer {
+    background: var(--color_dark);
+    padding: 20px 0;
+    text-align: center;
+    p {
+        color: #aaa;
+    }
+}
+
 .card {
     margin-bottom: 20px;
     border: 1px solid #4f4f4f;
     padding: 20px;
-    img {
+    display: flex;
+    figure {
+        width: 50%;
+    }
+    &_content {
         width: 100%;
     }
-    p {
+    p, h2 {
         color: #aaa;
-    }
-    h2 {
-        color: #fff;
+        margin-bottom: 15px;
     }
     .descr {
-        font-size: .8rem;
-        font-weight: bolder;
-        color: #141414;
+        font-weight: normal;
+        color: #ffffff;
     }
 }

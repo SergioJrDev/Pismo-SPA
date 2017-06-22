@@ -3,7 +3,7 @@ import Search from './search'
 import Favorite from './favorite'
 import Results from './results'
 import Header from './header'
-
+import Footer from './footer'
 
 class App extends Component {
     constructor(props) {
@@ -33,6 +33,7 @@ class App extends Component {
                 <Favorite favorite={this.state.favorite} />
                 <Search up={this.updateResults} />
                 <Results addFavorite={this.updateFavorite} data={this.state.result} />
+                <Footer />
             </div>
         )
     }
