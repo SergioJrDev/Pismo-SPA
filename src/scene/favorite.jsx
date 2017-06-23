@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { getFavorites, removeFavorites } from './../services/index'
 
 export default class Favorites extends Component {
@@ -10,9 +11,10 @@ export default class Favorites extends Component {
         this.updateFavorites = this.updateFavorites.bind(this);
     }
 
-    updateFavorites(e) {
+    updateFavorites(self, e) {
         removeFavorites(e);
         this.setState({...this.state, favorite: getFavorites()})
+        self.preventDefault();
     }
 
     renderFavorites(itens) {
@@ -24,7 +26,11 @@ export default class Favorites extends Component {
                     </figure>
                     <div className="card_content">
                         <h2>{e.show_title}</h2>
-                        <a className="btn btn-theme btn-icon" onClick={() => this.updateFavorites(e)} href="#"><i className="fa fa-heart" aria-hidden="true"></i></a>
+                        <a 
+                            className="btn btn-theme btn-icon" 
+                            onClick={self => this.updateFavorites(self, e)} 
+                            href="#">
+                            <i className="fa fa-heart" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>)
@@ -36,6 +42,8 @@ export default class Favorites extends Component {
         return (
         <section className="space-default search-section">
             <div className="container">
+                <Link className="btn btn-dark btn-small" to="/inicio">Voltar</Link>
+                <a href="#" className="btn btn-theme btn-small float-right">Limpar Lista</a>
                 {this.renderFavorites(item)}
             </div>
         </section>

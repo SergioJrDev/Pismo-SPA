@@ -1,5 +1,10 @@
 import React from 'react'
 
+function handleClick(self, itens) {
+    itens.favorite([itens.data])
+    self.preventDefault();
+};
+
 const Card = props => (
     <div className="card">
         <figure>
@@ -16,7 +21,7 @@ const Card = props => (
 
             <span className="descr">Sinopse</span>
             <p>{props.data.summary}</p>
-            <a className="btn btn-theme btn-icon" onClick={() => props.favorite([props.data])} href="#"><i className="fa fa-heart" aria-hidden="true"></i></a>
+            <a className="btn btn-theme btn-icon" onClick={self => handleClick(self, props)} href="#"><i className="fa fa-heart" aria-hidden="true"></i></a>
         </div>
     </div>
 )
