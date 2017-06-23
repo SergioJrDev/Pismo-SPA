@@ -33,7 +33,6 @@ export default class Results extends Component {
                             {this.renderMovies(item)}
                         </div>
                     }
-
                 </div>
             </section>
         )

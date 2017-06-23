@@ -2,9 +2,6 @@ import React from 'react'
 
 const Card = props => (
     <div className="card">
-        {<console className="log">
-            <props></props>
-        </console>}
         <figure>
             <img src={props.data.poster} alt=""/>
         </figure>
