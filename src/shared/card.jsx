@@ -2,6 +2,9 @@ import React from 'react'
 
 const Card = props => (
     <div className="card">
+        {<console className="log">
+            <props></props>
+        </console>}
         <figure>
             <img src={props.data.poster} alt=""/>
         </figure>
@@ -16,7 +19,7 @@ const Card = props => (
 
             <span className="descr">Sinopse</span>
             <p>{props.data.summary}</p>
-            <a className="btn btn-theme btn-icon" onClick={() => this.props.addFavorite([e])} href="#"><i className="fa fa-heart" aria-hidden="true"></i></a>
+            <a className="btn btn-theme btn-icon" onClick={() => props.favorite([props.data])} href="#"><i className="fa fa-heart" aria-hidden="true"></i></a>
         </div>
     </div>
 )

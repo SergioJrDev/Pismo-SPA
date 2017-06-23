@@ -11,13 +11,13 @@ export default class Results extends Component {
         if(itens.length > 0) {
             return _.map(itens, (e, index) => (
                 <div className="" key={index}>
-                    <Card data={e} />
+                    <Card favorite={this.props.addFavorite} data={e} />
                 </div>)
             )
         };
         if(!_.isEmpty(itens)) {
             return (
-                <Card data={itens} />
+                <Card favorite={this.props.addFavorite} data={itens} />
             )
         }
     }

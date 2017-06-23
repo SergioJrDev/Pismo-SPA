@@ -14,7 +14,8 @@ class App extends Component {
         }
 
         this.updateResults = this.updateResults.bind(this);
-        this. updateFavorite = this. updateFavorite.bind(this);
+        this.updateFavorite = this.updateFavorite.bind(this);
+        this.removeFavorite = this.removeFavorite.bind(this);
 
     }
 
@@ -26,11 +27,16 @@ class App extends Component {
         this.setState({...this.state, favorite: this.state.favorite.concat(e)})
     }
 
+    removeFavorite(e) {
+        const filter = _.filter(this.state.favorite, item => item.unit !== e[0].unit)
+        this.setState({...this.state, favorite: filter})
+    }
+
     render() {   
         return (
             <div>
                 <Header />
-                <Favorite favorite={this.state.favorite} />
+                {/*<Favorite removeFavorite={this.removeFavorite} favorite={this.state.favorite} />*/}
                 <Search up={this.updateResults} />
                 <Results addFavorite={this.updateFavorite} data={this.state.result} />
                 <Footer />
