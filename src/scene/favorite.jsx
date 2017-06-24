@@ -19,18 +19,18 @@ export default class Favorites extends Component {
 
     renderFavorites(itens) {
         return _.map(itens, (e, index) => (
-            <div className="" key={index}>
-                <div className="card">
+            <div className="xs-6-12 sm-4-12 md-3-12" key={index}>
+                <div className="card_favorite">
                     <figure>
                         <img src={e.poster} alt=""/>
                     </figure>
                     <div className="card_content">
                         <h2>{e.show_title}</h2>
                         <a 
-                            className="btn btn-theme btn-icon" 
+                            className="btn btn-theme btn-small" 
                             onClick={self => this.updateFavorites(self, e)} 
                             href="#">
-                            <i className="fa fa-heart" aria-hidden="true"></i></a>
+                            Remover dos favoritos</a>
                     </div>
                 </div>
             </div>)
@@ -44,7 +44,9 @@ export default class Favorites extends Component {
             <div className="container">
                 <Link className="btn btn-dark btn-small" to="/inicio">Voltar</Link>
                 <a href="#" className="btn btn-theme btn-small float-right">Limpar Lista</a>
-                {this.renderFavorites(item)}
+                <div className="grid">
+                    {this.renderFavorites(item)}
+                </div>
             </div>
         </section>
         )

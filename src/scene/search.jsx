@@ -43,7 +43,6 @@ class Search extends Component {
         return (
             <section className="space-default search-section">
                 <div className="container">
-                    {/*<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. perspiciatis rem itaque voluptatibus assumenda.</h2>*/}
                     <form onSubmit={this.handleSubmit}>
                         <div className="input-group">
                             <label className="label" htmlFor="title">Título do filme</label>
