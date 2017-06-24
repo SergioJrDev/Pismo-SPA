@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { checkAuth } from './../services/localStorage'
+import { getUsers, updateUsers, createUser} from './../services/localStorage'
 
-class Login extends Component {
+class Register extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            name: '', 
             email: '',
             pass: ''    
         }
@@ -14,12 +15,16 @@ class Login extends Component {
     }
 
     handleSubmit(e) {
-        checkAuth(this.state)
+        
+        createUser(this.state);
         e.preventDefault();
     }
 
     handleChange(e) {
         switch (e.target.name) {
+            case 'name':
+                this.setState({...this.state, name: e.target.value})
+                break;
             case 'email':
                 this.setState({...this.state, email: e.target.value})
                 break;
@@ -36,30 +41,43 @@ class Login extends Component {
         return (
             <section className="space-default search-section">
                 <div className="container">
+                    <p>Faça seu registro</p>
                     <form onSubmit={this.handleSubmit}>
                         <div className="input-group">
-                            <label className="label" htmlFor="email">E-mail</label>
+                            <label className="label" htmlFor="name">Nome</label>
                             <input
-                                id="email" 
-                                name="email" 
+                                id="name" 
+                                name="name" 
                                 onChange={this.handleChange}
+                                value={this.state.name}
                                 className="input" 
                                 type="text"/>
                         </div>
                         <div className="input-group">
-                            <label className="label" htmlFor="senha">Senha</label>
+                            <label className="label" htmlFor="email">E-mail</label>
+                            <input
+                                id="email" 
+                                name="email"
+                                onChange={this.handleChange} 
+                                value={this.state.email}
+                                className="input" 
+                                type="text"/>
+                        </div>
+                        <div className="input-group">
+                            <label className="label" htmlFor="pass">Senha</label>
                             <input
                                 id="pass" 
                                 name="pass" 
                                 onChange={this.handleChange}
+                                value={this.state.pass}
                                 className="input" 
                                 type="password"/>
                         </div>
-                        <button className="btn btn-dark btn-uppercase" type="submit">Pesquisar</button>
+                        <button className="btn btn-dark btn-uppercase" type="submit">Criar conta</button>
                     </form>
                 </div>
             </section>
         )
     }
 }
-export default Login;
+export default Register;

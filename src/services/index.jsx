@@ -1,6 +1,10 @@
 import Axios from 'axios';
+import { getUsers, updateUsers, createUser} from './../services/localStorage'
 
-var favorites = [];
+let
+    loggedIndex = JSON.parse(localStorage.getItem("loggin")),
+    allUsers = getUsers(),
+    favorites = allUsers[loggedIndex] ? allUsers[loggedIndex].fav : [];
 
 export function SearchAPI(term, dispatch) {
     if(term === null) {
@@ -9,7 +13,7 @@ export function SearchAPI(term, dispatch) {
     }
     
     let { title, director, actor } = term;
-    var url = 'http://netflixroulette.net/api/api.php'
+    let url = 'http://netflixroulette.net/api/api.php'
 
     if(title) {
         url = url+'?title='+title;
@@ -29,9 +33,13 @@ export function getFavorites() {
 }
 
 export function addFavorites(e) {
+    allUsers[loggedIndex].fav = favorites.concat(e);
+    updateUsers(allUsers);
     return favorites = favorites.concat(e);
 }
 
 export function removeFavorites(e) {
     favorites = _.filter(favorites, item => item.unit !== e.unit);
+    allUsers[loggedIndex].fav = favorites;
+        updateUsers(allUsers);
 }

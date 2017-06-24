@@ -10,9 +10,7 @@ class Search extends Component {
             actor: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleTitleChange = this.handleTitleChange.bind(this);
-        this.handleDirectorChange = this.handleDirectorChange.bind(this);
-        this.handleActorChange = this.handleActorChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.clearValues = this.clearValues.bind(this);
         
     }
@@ -27,16 +25,21 @@ class Search extends Component {
         e.preventDefault();
     }
 
-    handleTitleChange(e) {
-        this.setState({...this.state, title: e.target.value})
-    }
-
-    handleDirectorChange(e) {
-         this.setState({...this.state, director: e.target.value})
-    }
-
-    handleActorChange(e) {
-         this.setState({...this.state, actor: e.target.value})
+    handleChange(e) {
+        switch (e.target.name) {
+            case 'title':
+                this.setState({...this.state, title: e.target.value})
+                break;
+            case 'director':
+                this.setState({...this.state, director: e.target.value})
+                break;
+            case 'actor':
+                this.setState({...this.state, actor: e.target.value})
+                break;
+            default:
+                this.setState({...this.state})
+                break;
+        }
     }
 
     render() {
@@ -47,7 +50,7 @@ class Search extends Component {
                         <div className="input-group">
                             <label className="label" htmlFor="title">Título do filme</label>
                             <input
-                                onChange={this.handleTitleChange} 
+                                onChange={this.handleChange} 
                                 value={this.state.title} 
                                 id="title" 
                                 name="title" 
@@ -57,7 +60,7 @@ class Search extends Component {
                         <div className="input-group">
                             <label className="label" htmlFor="director">Director</label>
                             <input 
-                                onChange={this.handleDirectorChange} 
+                                onChange={this.handleChange} 
                                 value={this.state.director} 
                                 id="director" 
                                 name="director" 
@@ -67,7 +70,7 @@ class Search extends Component {
                         <div className="input-group">
                             <label className="label" htmlFor="actor">Ator</label>
                             <input 
-                                onChange={this.handleActorChange} 
+                                onChange={this.handleChange} 
                                 value={this.state.actor} 
                                 id="actor" 
                                 name="actor" 
