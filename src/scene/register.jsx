@@ -39,9 +39,9 @@ class Register extends Component {
 
     render() {
         return (
-            <section className="space-default search-section">
+            <section className="space-default fix-header search-section">
                 <div className="container">
-                    <p>Faça seu registro</p>
+                     <h2 className="page-title mg-bottom">Faça seu cadastro</h2>
                     <form onSubmit={this.handleSubmit}>
                         <div className="input-group">
                             <label className="label" htmlFor="name">Nome</label>

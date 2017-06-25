@@ -34,29 +34,36 @@ class Login extends Component {
 
     render() {
         return (
-            <section className="space-default search-section">
-                <div className="container">
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="input-group">
-                            <label className="label" htmlFor="email">E-mail</label>
-                            <input
-                                id="email" 
-                                name="email" 
-                                onChange={this.handleChange}
-                                className="input" 
-                                type="text"/>
-                        </div>
-                        <div className="input-group">
-                            <label className="label" htmlFor="senha">Senha</label>
-                            <input
-                                id="pass" 
-                                name="pass" 
-                                onChange={this.handleChange}
-                                className="input" 
-                                type="password"/>
-                        </div>
-                        <button className="btn btn-dark btn-uppercase" type="submit">Pesquisar</button>
-                    </form>
+            <section className="fix-header">
+                <div className="space-default search-section">
+                    <div className="container">
+                        <h2 className="page-title">Faça seu login</h2>
+                    </div>
+                </div>
+                <div className="space-default">
+                    <div className="container">
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="input-group">
+                                <label className="label" htmlFor="email">E-mail</label>
+                                <input
+                                    id="email" 
+                                    name="email" 
+                                    onChange={this.handleChange}
+                                    className="input" 
+                                    type="text"/>
+                            </div>
+                            <div className="input-group">
+                                <label className="label" htmlFor="senha">Senha</label>
+                                <input
+                                    id="pass" 
+                                    name="pass" 
+                                    onChange={this.handleChange}
+                                    className="input" 
+                                    type="password"/>
+                            </div>
+                            <button className="btn btn-dark btn-uppercase" type="submit">Pesquisar</button>
+                        </form>
+                    </div>
                 </div>
             </section>
         )

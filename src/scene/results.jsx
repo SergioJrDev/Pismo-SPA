@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import _ from 'lodash'
 import Card from './../shared/card'
 
+
 export default class Results extends Component {
     constructor(props) {
         super(props)
@@ -11,7 +12,10 @@ export default class Results extends Component {
         if(itens.length > 0) {
             return _.map(itens, (e, index) => (
                 <div className="" key={index}>
-                    <Card favorite={this.props.addFavorite} data={e} />
+                    <Card 
+                        isFav=""
+                        favorite={this.props.addFavorite} 
+                        data={e} />
                 </div>)
             )
         };
@@ -27,6 +31,7 @@ export default class Results extends Component {
         return (
             <section className="space-default results-section">
                 <div className="container">
+                    <p style={{color: '#fff', textAlign: 'center'}}>Carregando... <i className="fa fa-spin fa-refresh" aria-hidden="true"></i></p>
                     {item.error ? 
                         <p style={{color: '#fff', textAlign: 'center'}}>Nenhum filme encontrado :(</p> : 
                         <div className="grid">

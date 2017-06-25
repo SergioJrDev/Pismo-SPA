@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 
 import Header from './../scene/header'
 import Footer from './../scene/footer'
@@ -13,7 +13,7 @@ const App = () => (
         <div>
             <Header />
                 <Route exact path="/" component={Login}/>
-                <Route exact path="/cadastro" component={Register}/>
+                <Route path="/cadastro" component={Register} />
                 <Route path="/favoritos" component={Favoritos}/>
                 <Route path="/inicio" component={Home} />
             <Footer />

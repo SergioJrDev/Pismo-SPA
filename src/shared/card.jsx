@@ -1,9 +1,18 @@
 import React from 'react'
+import { getFavorites } from './../services/index'
 
 function handleClick(self, itens) {
     itens.favorite([itens.data])
+    self.target.innerHTML = 'Já adicionado aos favoritos <i class="fa fa-check" aria-hidden="true"></i>';
+    self.target.classList.add('btn-disabled')
     self.preventDefault();
 };
+
+function isFav(e) {
+    let favId = getFavorites().map(fav => fav.unit)
+    return favId.includes(e);
+}
+
 
 const Card = props => (
     <div className="card">
@@ -21,7 +30,14 @@ const Card = props => (
 
             <span className="descr">Sinopse</span>
             <p>{props.data.summary}</p>
-            <a className="btn btn-theme btn-icon" onClick={self => handleClick(self, props)} href="#"><i className="fa fa-heart" aria-hidden="true"></i></a>
+            <a 
+                className={isFav(props.data.unit) ? 'btn btn-theme btn-disabled btn-small' : 'btn btn-theme btn-small'}
+                onClick={self => handleClick(self, props)} 
+                href="#">
+                {isFav(props.data.unit) ? 
+                'Já adicionado aos favoritos' :
+                'Adicionar aos favoritos' }
+            </a>
         </div>
     </div>
 )

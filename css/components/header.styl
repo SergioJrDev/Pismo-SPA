@@ -1,7 +1,29 @@
 header {
     background: var(--color_dark);
-    padding: 15px 0;   
+    padding: 15px 0;  
+    position: fixed;
+    width: 100%;
+    z-index: 1; 
+    top: 0;
     h1 {
         color: var(--color_theme)
     }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    nav {
+        a {
+            margin-left: 10px;
+            padding: 10px;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    }
 }  
+
+.fix-header {
+    margin-top: 80px;
+}

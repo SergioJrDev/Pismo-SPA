@@ -44,8 +44,9 @@ class Search extends Component {
 
     render() {
         return (
-            <section className="space-default search-section">
+            <section className="space-default fix-header search-section">
                 <div className="container">
+                    <h2 className="page-title mg-bottom">Pesquisar filmes</h2>
                     <form onSubmit={this.handleSubmit}>
                         <div className="input-group">
                             <label className="label" htmlFor="title">Título do filme</label>

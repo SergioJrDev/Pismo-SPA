@@ -6,6 +6,7 @@ let
     allUsers = getUsers(),
     favorites = allUsers[loggedIndex] ? allUsers[loggedIndex].fav : [];
 
+
 export function SearchAPI(term, dispatch) {
     if(term === null) {
         dispatch({});

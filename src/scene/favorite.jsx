@@ -40,12 +40,18 @@ export default class Favorites extends Component {
     render() {
         const item = this.state.favorite;
         return (
-        <section className="space-default search-section">
-            <div className="container">
-                <Link className="btn btn-dark btn-small" to="/inicio">Voltar</Link>
-                <a href="#" className="btn btn-theme btn-small float-right">Limpar Lista</a>
-                <div className="grid">
-                    {this.renderFavorites(item)}
+
+        <section className="fix-header">
+            <div className="search-section space-default">
+                <div className="container">
+                    <h2 className="page-title">Meus Filmes Favoritos</h2>
+                </div>
+            </div>
+            <div className="space-default">
+                <div className="container">
+                    <div className="grid">
+                        {this.renderFavorites(item)}
+                    </div>
                 </div>
             </div>
         </section>
