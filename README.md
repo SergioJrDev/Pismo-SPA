@@ -4,7 +4,7 @@
 
 <p>Para iniciar o projeto, basta executar <em>npm start</em> ou <em>yarn start</em></p>
 
-<p>E acessar o endereço <em>http://localhost:8080<em></p>
+<p>E acessar o endereço <em>http://localhost:8080</em></p>
 
 <p>Ferramentas utilizadas:</p>
 <ul>
