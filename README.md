@@ -6,6 +6,10 @@
 
 <p>E acessar o endereço <em>http://localhost:8080</em></p>
 
+<p>Ou</p>
+
+<p>Subir um servidor local na pasta /public, como o bundle.js já está gerado </p>
+
 <p>Ferramentas utilizadas:</p>
 <ul>
     <li>React</li>
