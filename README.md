@@ -1,7 +1,7 @@
-#Challenge Pismo
+<h1>Challenge Pismo</h1>
 
-Faça o download do repositório e execute npm install ou yarn install para baixar as dependências
+<p>Faça o download do repositório e execute <em>npm install</em> ou <em>yarn install</em> para baixar as dependências</p>
 
-Para iniciar o projeto, basta executar npm start ou yarn start
+<p>Para iniciar o projeto, basta executar <em>npm start</em> ou <em>yarn start</em></p>
 
-E acessar o endereço http://localhost:8080
+<p>E acessar o endereço <em>http://localhost:8080<em></p>

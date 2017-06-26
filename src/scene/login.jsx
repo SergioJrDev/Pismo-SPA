@@ -7,7 +7,8 @@ class Login extends Component {
         super(props)
         this.state = {
             email: '',
-            pass: ''    
+            pass: '',
+            error: false,    
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,6 +17,9 @@ class Login extends Component {
 
     handleSubmit(e) {
         const bool = checkAuth(this.state)
+        if(bool === false) {
+            this.setState({...this.state, error: true})
+        }
         e.preventDefault();
     }
 
@@ -55,6 +59,9 @@ class Login extends Component {
                             </fieldset>
                             <button className="btn btn-dark btn-uppercase" type="submit">Entrar</button>
                             <p className="alert">Ou <Link to="/cadastro">crie sua conta</Link></p>
+                            {this.state.error &&
+                                <p className="alert alert-danger">Usuário ou senha não encontrados.</p>
+                            }
                         </form>
                     </div>
                 </div>

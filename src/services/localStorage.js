@@ -13,13 +13,18 @@ export function updateUsers(newObj) {
 
 export function checkAuth(login) {
     const users = getUsers();
-    return users.map(function(user, index) {
+    let bool = false;
+    users.map(function(user, index) {
         if(user.email === login.email && user.pass === login.pass) {
             localStorage.setItem("loggin", JSON.stringify(index));
-            location.reload();
-        } else {
-            console.log('Error Login')
-        }})          
+            bool = true;
+        }
+    })  
+    if(bool === false) {
+        return bool;
+    } else {
+        location.reload();
+    }        
 }
 
 export function loggout() {
