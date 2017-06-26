@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="card"
+>
+  <figure>
+    <img
+      alt=""
+      src="img.jpg"
+    />
+  </figure>
+  <div
+    className="card_content"
+  >
+    <h2>
+      Título do filme
+    </h2>
+    <a
+      className="btn btn-theme btn-icon"
+      href="#"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="fa fa-heart"
+      />
+    </a>
+  </div>
+</div>
+`;

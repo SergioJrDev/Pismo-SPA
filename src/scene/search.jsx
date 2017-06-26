@@ -17,11 +17,11 @@ class Search extends Component {
 
     clearValues() {
         this.setState({...this.state, title: '', director: '',  actor: ''})
-        SearchAPI(null, this.props.up);
+        SearchAPI(null, this.props.update);
     }
 
     handleSubmit(e) {
-        SearchAPI(this.state, this.props.up);
+        SearchAPI(this.state, this.props.update);
         e.preventDefault();
     }
 
@@ -35,7 +35,8 @@ class Search extends Component {
                 <div className="container">
                     <h2 className="page-title mg-bottom">Pesquisar filmes</h2>
                     <form onSubmit={this.handleSubmit}>
-                        <div className="input-group">
+                        <fieldset className="input-group">
+                            <legend className="hidden">Título do filme</legend>
                             <label className="label" htmlFor="title">Título do filme</label>
                             <input
                                 onChange={this.handleChange} 
@@ -44,8 +45,10 @@ class Search extends Component {
                                 name="title" 
                                 className="input" 
                                 type="text"/>
-                        </div>
-                        <div className="input-group">
+                            
+                        </fieldset>
+                        <fieldset className="input-group">
+                            <legend className="hidden">Diretor</legend>
                             <label className="label" htmlFor="director">Director</label>
                             <input 
                                 onChange={this.handleChange} 
@@ -54,8 +57,9 @@ class Search extends Component {
                                 name="director" 
                                 className="input" 
                                 type="text"/>
-                        </div>
-                        <div className="input-group">
+                        </fieldset>
+                        <fieldset className="input-group">
+                            <legend className="hidden">Ator</legend>
                             <label className="label" htmlFor="actor">Ator</label>
                             <input 
                                 onChange={this.handleChange} 
@@ -64,7 +68,7 @@ class Search extends Component {
                                 name="actor" 
                                 className="input" 
                                 type="text"/>
-                        </div>
+                        </fieldset>
                         <button className="btn btn-dark btn-uppercase" type="submit">Pesquisar</button>
                         <button onClick={this.clearValues} className="btn float-right btn-danger btn-uppercase" type="reset">Nova Pesquisa</button>
                     </form>

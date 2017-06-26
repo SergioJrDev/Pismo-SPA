@@ -31,7 +31,8 @@ class Login extends Component {
                         <h2 className="page-title mg-bottom">Faça seu login</h2>
 
                         <form onSubmit={this.handleSubmit}>
-                            <div className="input-group">
+                            <fieldset className="input-group">
+                                <legend className="hidden">E-mail</legend>
                                 <label className="label" htmlFor="email">E-mail</label>
                                 <input
                                     id="email" 
@@ -40,8 +41,9 @@ class Login extends Component {
                                     onChange={this.handleChange}
                                     className="input" 
                                     type="email"/>
-                            </div>
-                            <div className="input-group">
+                            </fieldset>
+                            <fieldset className="input-group">
+                                <legend className="hidden">Senha</legend>
                                 <label className="label" htmlFor="senha">Senha</label>
                                 <input
                                     id="pass" 
@@ -50,7 +52,7 @@ class Login extends Component {
                                     onChange={this.handleChange}
                                     className="input" 
                                     type="password"/>
-                            </div>
+                            </fieldset>
                             <button className="btn btn-dark btn-uppercase" type="submit">Entrar</button>
                             <p className="alert">Ou <Link to="/cadastro">crie sua conta</Link></p>
                         </form>

@@ -30,7 +30,8 @@ class Register extends Component {
                 <div className="container">
                      <h2 className="page-title mg-bottom">Faça seu cadastro</h2>
                     <form onSubmit={this.handleSubmit}>
-                        <div className="input-group">
+                        <fieldset className="input-group">
+                            <legend className="hidden">Nome</legend>
                             <label className="label" htmlFor="name">Nome</label>
                             <input
                                 id="name" 
@@ -40,8 +41,9 @@ class Register extends Component {
                                 className="input" 
                                 required
                                 type="text"/>
-                        </div>
-                        <div className="input-group">
+                        </fieldset>
+                        <fieldset className="input-group">
+                            <legend className="hidden">E-mail</legend>
                             <label className="label" htmlFor="email">E-mail</label>
                             <input
                                 id="email" 
@@ -51,8 +53,9 @@ class Register extends Component {
                                 className="input" 
                                 required
                                 type="email"/>
-                        </div>
-                        <div className="input-group">
+                        </fieldset>
+                        <fieldset className="input-group">
+                            <legend className="hidden">Senha</legend>
                             <label className="label" htmlFor="pass">Senha</label>
                             <input
                                 id="pass" 
@@ -62,7 +65,7 @@ class Register extends Component {
                                 value={this.state.pass}
                                 className="input" 
                                 type="password"/>
-                        </div>
+                        </fieldset>
                         <button className="btn btn-dark btn-uppercase" type="submit">Criar conta</button>
                         <p className="alert">Ou <Link to="/login">Faça login</Link></p>
                     </form>

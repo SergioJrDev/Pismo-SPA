@@ -29,7 +29,7 @@ class App extends Component {
     render() {   
         return (
             <div>
-                <Search up={this.updateResults} />
+                <Search update={this.updateResults} />
                 <Results addFavorite={this.updateFavorite} data={this.state.result} />
             </div>
         )

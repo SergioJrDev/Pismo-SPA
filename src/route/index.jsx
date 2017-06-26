@@ -41,7 +41,6 @@ class App extends Component {
                             <Redirect to="/login" /> :
                             <Favoritos />
                         )}/>
-
                         <Route path="/procurar-filmes" render={() => (
                             !this.state.login ?
                             <Redirect to="/login" /> :
