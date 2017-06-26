@@ -6,9 +6,12 @@
 
 <p>E acessar o endereço <em>http://localhost:8080</em></p>
 
+<p>Ou subir um servidor local na pasta ./public</p>
+
 <p>Ferramentas utilizadas:</p>
 <ul>
     <li>React</li>
     <li>Webpack</li>
+    <li>Jest</li>
     <li>Gulp</li>
 </ul>
