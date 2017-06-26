@@ -7,14 +7,14 @@ const logged = localStorage.getItem("loggin");
 const header = () => (
     <header>
         <div className="container">
-            <h1>MyFlix</h1>
+            <h1>MyNetflix</h1>
         
             {logged ? (
             
                 <nav>
                     <Link to="/procurar-filmes">Procurar Filmes</Link>
                     <Link to="/favoritos">Favoritos</Link>
-                    <Link to="/" onClick={() => loggout()}>Sair</Link>
+                    <Link to="/login" onClick={() => loggout()}>Sair</Link>
                 </nav>
            
             ) : (

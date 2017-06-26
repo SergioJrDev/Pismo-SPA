@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "Pismo Challenge",
   "main": "index.js",
-  "author": "Sérgio Junior",
-  "license": "MIT",
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --progress --colors --inline --hot",
     "build": "webpack --progress -p"
   },
+   "jest": {
+     "setupFiles":["<rootDir>/localStorageMockup.js"]
+   },
+  "author": "Sérgio Junior",
+  "license": "MIT",
   "dependencies": {
     "webpack": "^3.0.0-rc.1"
   },

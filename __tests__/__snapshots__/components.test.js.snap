@@ -29,3 +29,48 @@ exports[`renders correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders correctly 2`] = `
+<div
+  className="card"
+>
+  <figure>
+    <img
+      alt=""
+      src="img.jpg"
+    />
+  </figure>
+  <div
+    className="card_content"
+  >
+    <h2>
+      Título do filme
+    </h2>
+    <span
+      className="descr"
+    >
+      Elenco
+    </span>
+    <p />
+    <span
+      className="descr"
+    >
+      Diretor
+    </span>
+    <p />
+    <span
+      className="descr"
+    >
+      Sinopse
+    </span>
+    <p />
+    <a
+      className="btn btn-theme btn-small"
+      href="#"
+      onClick={[Function]}
+    >
+      Adicionar aos favoritos
+    </a>
+  </div>
+</div>
+`;
