@@ -33,7 +33,7 @@ class App extends Component {
                         )}/>
                         <Route path="/cadastro" render={() => (
                             this.state.login ?
-                            <Redirect to="/favoritos" /> :
+                            <Redirect to="/procurar-filmes" /> :
                             <Register />
                         )}/>
                         <Route path="/favoritos" render={() => (

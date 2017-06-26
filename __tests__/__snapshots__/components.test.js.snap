@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Renderizar componentes compartilhados 1`] = `
 <div
   className="card"
 >
@@ -30,7 +30,7 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`renders correctly 2`] = `
+exports[`Renderizar componentes compartilhados 2`] = `
 <div
   className="card"
 >

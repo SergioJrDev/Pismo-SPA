@@ -9,7 +9,7 @@
     "build": "webpack --progress -p"
   },
    "jest": {
-     "setupFiles":["<rootDir>/localStorageMockup.js"]
+      "setupFiles":["<rootDir>/localStorageMockup.js"]
    },
   "author": "Sérgio Junior",
   "license": "MIT",

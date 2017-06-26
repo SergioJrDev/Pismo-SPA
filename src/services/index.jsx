@@ -13,8 +13,8 @@ export function SearchAPI(term, dispatch) {
         return;
     }
     
-    let { title, director, actor } = term, params = '';
     const url = 'http://netflixroulette.net/api/api.php'
+    let { title, director, actor } = term, params = '';
 
     if(title) {
         params = params+'?title='+title;
