@@ -9,9 +9,6 @@ import Favoritos from './../scene/favorite'
 import Home from './../scene/index'
 import Register from './../scene/register'
 
-const loggout = () => <p>Home</p>
-
-
 class App extends Component {
     constructor(props) {
         super(props)
@@ -25,7 +22,12 @@ class App extends Component {
             <BrowserRouter>
                 <div>
                     <Header />
-                        <Route exact path="/" component={Home} />
+                        <Route exact path="/" render={() => (
+                            this.state.login ?
+                            <Redirect to="/procurar-filmes" /> :
+                            <Redirect to="/login" />
+                        )}/>
+
                         <Route path="/login" render={() => (
                             this.state.login ?
                             <Redirect to="/procurar-filmes" /> :

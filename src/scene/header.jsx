@@ -7,7 +7,7 @@ const logged = localStorage.getItem("loggin");
 const header = () => (
     <header>
         <div className="container">
-            <h1>MyNetflix</h1>
+            <Link to="/"><h1>MyNetflix</h1></Link>
         
             {logged ? (
             
