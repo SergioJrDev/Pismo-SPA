@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { checkAuth } from './../services/localStorage'
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
     constructor(props) {
@@ -14,22 +15,12 @@ class Login extends Component {
     }
 
     handleSubmit(e) {
-        checkAuth(this.state)
+        const bool = checkAuth(this.state)
         e.preventDefault();
     }
 
     handleChange(e) {
-        switch (e.target.name) {
-            case 'email':
-                this.setState({...this.state, email: e.target.value})
-                break;
-            case 'pass':
-                this.setState({...this.state, pass: e.target.value})
-                break;
-            default:
-                this.setState({...this.state})
-            break;
-        }
+        this.setState({...this.state, [e.target.name]: e.target.value})
     }
 
     render() {
@@ -37,31 +28,31 @@ class Login extends Component {
             <section className="fix-header">
                 <div className="space-default search-section">
                     <div className="container">
-                        <h2 className="page-title">Faça seu login</h2>
-                    </div>
-                </div>
-                <div className="space-default">
-                    <div className="container">
+                        <h2 className="page-title mg-bottom">Faça seu login</h2>
+
                         <form onSubmit={this.handleSubmit}>
                             <div className="input-group">
                                 <label className="label" htmlFor="email">E-mail</label>
                                 <input
                                     id="email" 
                                     name="email" 
+                                    required
                                     onChange={this.handleChange}
                                     className="input" 
-                                    type="text"/>
+                                    type="email"/>
                             </div>
                             <div className="input-group">
                                 <label className="label" htmlFor="senha">Senha</label>
                                 <input
                                     id="pass" 
                                     name="pass" 
+                                    required
                                     onChange={this.handleChange}
                                     className="input" 
                                     type="password"/>
                             </div>
-                            <button className="btn btn-dark btn-uppercase" type="submit">Pesquisar</button>
+                            <button className="btn btn-dark btn-uppercase" type="submit">Entrar</button>
+                            <p className="alert">Ou <Link to="/cadastro">crie sua conta</Link></p>
                         </form>
                     </div>
                 </div>

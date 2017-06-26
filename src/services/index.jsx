@@ -13,20 +13,20 @@ export function SearchAPI(term, dispatch) {
         return;
     }
     
-    let { title, director, actor } = term;
-    let url = 'http://netflixroulette.net/api/api.php'
+    let { title, director, actor } = term, params = '';
+    const url = 'http://netflixroulette.net/api/api.php'
 
     if(title) {
-        url = url+'?title='+title;
+        params = params+'?title='+title;
     }
     if(director) {
-        url = url+'?director='+director;
+        params = params+'?director='+director;
     }
     if(actor) {
-        url = url+'?actor='+actor;
+        params = params+'?actor='+actor;
     }
 
-    Axios.get(url).then(res => dispatch(res.data)).catch(error => dispatch({error: error.response.data.message}));
+    Axios.get(url + params).then(res => dispatch(res.data)).catch(error => dispatch({error: error.response.data.message}));
 }
 
 export function getFavorites() {
@@ -42,5 +42,5 @@ export function addFavorites(e) {
 export function removeFavorites(e) {
     favorites = _.filter(favorites, item => item.unit !== e.unit);
     allUsers[loggedIndex].fav = favorites;
-        updateUsers(allUsers);
+    updateUsers(allUsers);
 }

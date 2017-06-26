@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { getUsers, updateUsers, createUser} from './../services/localStorage'
 
 class Register extends Component {
@@ -7,7 +8,7 @@ class Register extends Component {
         this.state = {
             name: '', 
             email: '',
-            pass: ''    
+            pass: ''  
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,26 +16,12 @@ class Register extends Component {
     }
 
     handleSubmit(e) {
-        
-        createUser(this.state);
+        createUser(this.state);        
         e.preventDefault();
     }
 
     handleChange(e) {
-        switch (e.target.name) {
-            case 'name':
-                this.setState({...this.state, name: e.target.value})
-                break;
-            case 'email':
-                this.setState({...this.state, email: e.target.value})
-                break;
-            case 'pass':
-                this.setState({...this.state, pass: e.target.value})
-                break;
-            default:
-                this.setState({...this.state})
-            break;
-        }
+        this.setState({...this.state, [e.target.name]: e.target.value})
     }
 
     render() {
@@ -51,6 +38,7 @@ class Register extends Component {
                                 onChange={this.handleChange}
                                 value={this.state.name}
                                 className="input" 
+                                required
                                 type="text"/>
                         </div>
                         <div className="input-group">
@@ -61,19 +49,22 @@ class Register extends Component {
                                 onChange={this.handleChange} 
                                 value={this.state.email}
                                 className="input" 
-                                type="text"/>
+                                required
+                                type="email"/>
                         </div>
                         <div className="input-group">
                             <label className="label" htmlFor="pass">Senha</label>
                             <input
                                 id="pass" 
                                 name="pass" 
+                                required
                                 onChange={this.handleChange}
                                 value={this.state.pass}
                                 className="input" 
                                 type="password"/>
                         </div>
                         <button className="btn btn-dark btn-uppercase" type="submit">Criar conta</button>
+                        <p className="alert">Ou <Link to="/login">Faça login</Link></p>
                     </form>
                 </div>
             </section>

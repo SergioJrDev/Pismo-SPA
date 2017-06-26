@@ -8,12 +8,17 @@ header {
     h1 {
         color: var(--color_theme)
     }
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    @media (min-width: xs) {
+        & {
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
     }
     nav {
+        text-align: center;
         a {
             margin-left: 10px;
             padding: 10px;
@@ -25,5 +30,10 @@ header {
 }  
 
 .fix-header {
-    margin-top: 80px;
+    margin-top: 100px;
+    @media (min-width: xs) {
+        & {
+            margin-top: 80px;
+        }
+    }
 }

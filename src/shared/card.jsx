@@ -3,12 +3,12 @@ import { getFavorites } from './../services/index'
 
 function handleClick(self, itens) {
     itens.favorite([itens.data])
-    self.target.innerHTML = 'Já adicionado aos favoritos <i class="fa fa-check" aria-hidden="true"></i>';
+    self.target.innerHTML = 'Adicionado aos favoritos <i class="fa fa-check" aria-hidden="true"></i>';
     self.target.classList.add('btn-disabled')
     self.preventDefault();
 };
 
-function isFav(e) {
+function isFavorite(e) {
     let favId = getFavorites().map(fav => fav.unit)
     return favId.includes(e);
 }
@@ -31,11 +31,11 @@ const Card = props => (
             <span className="descr">Sinopse</span>
             <p>{props.data.summary}</p>
             <a 
-                className={isFav(props.data.unit) ? 'btn btn-theme btn-disabled btn-small' : 'btn btn-theme btn-small'}
+                className={isFavorite(props.data.unit) ? 'btn btn-theme btn-disabled btn-small' : 'btn btn-theme btn-small'}
                 onClick={self => handleClick(self, props)} 
                 href="#">
-                {isFav(props.data.unit) ? 
-                'Já adicionado aos favoritos' :
+                {isFavorite(props.data.unit) ? 
+                'Adicionado aos favoritos' :
                 'Adicionar aos favoritos' }
             </a>
         </div>

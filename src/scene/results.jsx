@@ -31,9 +31,8 @@ export default class Results extends Component {
         return (
             <section className="space-default results-section">
                 <div className="container">
-                    <p style={{color: '#fff', textAlign: 'center'}}>Carregando... <i className="fa fa-spin fa-refresh" aria-hidden="true"></i></p>
                     {item.error ? 
-                        <p style={{color: '#fff', textAlign: 'center'}}>Nenhum filme encontrado :(</p> : 
+                        <p style={{color: '#fff', textAlign: 'center'}}>Nenhum filme encontrado.</p> : 
                         <div className="grid">
                             {this.renderMovies(item)}
                         </div>

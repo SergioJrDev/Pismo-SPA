@@ -26,20 +26,7 @@ class Search extends Component {
     }
 
     handleChange(e) {
-        switch (e.target.name) {
-            case 'title':
-                this.setState({...this.state, title: e.target.value})
-                break;
-            case 'director':
-                this.setState({...this.state, director: e.target.value})
-                break;
-            case 'actor':
-                this.setState({...this.state, actor: e.target.value})
-                break;
-            default:
-                this.setState({...this.state})
-                break;
-        }
+        this.setState({...this.state, [e.target.name]: e.target.value})
     }
 
     render() {
@@ -79,7 +66,7 @@ class Search extends Component {
                                 type="text"/>
                         </div>
                         <button className="btn btn-dark btn-uppercase" type="submit">Pesquisar</button>
-                        <button onClick={this.clearValues} className="btn float-right btn-light btn-uppercase" type="reset">Nova Pesquisa</button>
+                        <button onClick={this.clearValues} className="btn float-right btn-danger btn-uppercase" type="reset">Nova Pesquisa</button>
                     </form>
                 </div>
             </section>
